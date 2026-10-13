@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Task Manager</title>
   </head>
   <body>
@@ -13,19 +14,22 @@
       <section id="task-form">
         <h2>Add New Task</h2>
         <form id="add-task-form">
-          <label for="task">Task:</label>
-          <input type="text" id="task" placeholder="Task" required />
-          <button type="submit">Add Task</button>
+          <div class="input-box">
+            <input type="text" id="task" placeholder="Task" required />
+            <button type="submit">Add Task</button>
+          </div>
         </form>
       </section>
 
       <section id="task-list">
         <h2>Task List</h2>
         <div class="task-filters">
-          <button id="all-tasks">All</button>
-          <button id="active-tasks">Active</button>
-          <button id="completed-tasks">Completed</button>
-          <button id="clear-completed">Clear Completed</button>
+          <button id="all-tasks" class="btn-filter">All</button>
+          <button id="active-tasks" class="btn-filter">Active</button>
+          <button id="completed-tasks" class="btn-filter">Completed</button>
+          <button id="clear-completed" class="btn-filter">
+            Clear Completed
+          </button>
         </div>
         <p id="remaining-tasks">
           Remaining Tasks: <span id="remaining-count">0</span>

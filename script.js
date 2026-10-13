@@ -71,9 +71,10 @@ function renderTasks() {
   }
   filteredTasks.forEach((task) => {
     const listItem = document.createElement("li");
+    const spanElement = document.createElement("span");
     const deleteButton = document.createElement("button");
     const editButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
+    deleteButton.textContent = "delete";
     deleteButton.dataset.id = task.id;
     deleteButton.dataset.action = "delete";
     editButton.dataset.action = "edit";
@@ -84,7 +85,8 @@ function renderTasks() {
     if (task.completed) {
       listItem.classList.add("completed");
     }
-    listItem.textContent = task.text;
+    spanElement.textContent = task.text;
+    listItem.appendChild(spanElement);
     listItem.appendChild(deleteButton);
     listItem.appendChild(editButton);
     tasks.appendChild(listItem);
